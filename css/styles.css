@@ -8,6 +8,7 @@
   --SLATE: #434455;
   --LIGHT-SLATE: #8e8f99;
   --GREY: rgba(46, 47, 66, 0.7);
+  --GREEN: #31d0aa;
   --dark-bg: var(--NAVY-BLUE);
   --topline-bg: var(--WHITE);
   --light-bg: var(--CLOUD);
@@ -17,6 +18,7 @@
   --secondary-text-color: var(--WHITE);
   --bottom-text-color: var(--SLATE);
   --highlight-text-color: var(--IRIS);
+  --highlight-nav-text-color: var(--OCEAN);
   --top-line-color-bg: var(--CORNFLOWER);
   --border-color: var(--CORNFLOWER);
   --dark-bg-overlay: var(--GREY);
@@ -40,8 +42,8 @@ body {
   border: 0px;
 }
 
-.current {
-  color: var(--highlight-text-color);
+.nav-link.current {
+  color: var(--highlight-nav-text-color);
   text-decoration: none;
 }
 
@@ -167,10 +169,13 @@ ul {
   padding-top: var(--section-item-gap);
 }
 .nav-item a.item:hover,
-.nav-item a.item:focus,
-.contact-item a.contact:hover,
-.contact-item a.contact:focus {
-  color: var(--highlight-text-color);
+.nav-item a.item:focus {
+  color: var(--highlight-nav-text-color);
+  text-decoration: underline;
+}
+span#studio:hover {
+  color: var(--highlight-nav-text-color);
+  text-decoration: underline;
 }
 
 .contact-list {
@@ -184,6 +189,11 @@ ul {
 }
 .contact-item {
   padding-top: var(--section-item-gap);
+}
+.contact-item a.contact:hover,
+.contact-item a.contact:focus {
+  color: var(--highlight-nav-text-color);
+  text-decoration: none;
 }
 .contact-link {
   color: var(--bottom-text-color);
@@ -245,10 +255,20 @@ ul {
   border: none;
   border-radius: 4px;
 }
-.button-main:hover {
-  font-weight: 700;
+.button-main:active {
+  display: inline-flex;
+  padding: 16px 32px;
+  align-items: flex-start;
+  gap: 10px;
+
+  border-radius: 4px;
+  background: var(--OCEAN);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
 }
 
+.features {
+  padding-top: 120px;
+}
 .features-list {
   display: flex;
   margin-left: 0px;
@@ -343,21 +363,53 @@ ul {
 }
 .socials-link:hover,
 .socials-link:focus {
-  background-color: var(--accent-color);
+  background-color: var(--OCEAN);
 }
 .socials-link:hover .socials-icon,
 .socials-link:focus .socials-icon {
   fill: var(--WHITE);
 }
 
-.customer-list {
+svg.client1-icon-a,
+svg.client2-icon-a,
+svg.client3-icon-a,
+svg.client4-icon-a,
+svg.client5-icon-a,
+svg.client6-icon-a {
+  display: block;
+}
+svg.client1-icon-b,
+svg.client2-icon-b,
+svg.client3-icon-b,
+svg.client4-icon-b,
+svg.client5-icon-b,
+svg.client6-icon-b {
+  display: none;
+}
+a.client1:hover svg.client1-icon-a,
+a.client2:hover svg.client2-icon-a,
+a.client3:hover svg.client3-icon-a,
+a.client4:hover svg.client4-icon-a,
+a.client5:hover svg.client5-icon-a,
+a.client6:hover svg.client6-icon-a {
+  display: none;
+}
+a.client1:hover svg.client1-icon-b,
+a.client2:hover svg.client2-icon-b,
+a.client3:hover svg.client3-icon-b,
+a.client4:hover svg.client4-icon-b,
+a.client5:hover svg.client5-icon-b,
+a.client6:hover svg.client6-icon-b {
+  display: block;
+}
+.client-list {
   display: flex;
   padding-top: calc(2 * var(--section-item-gap));
 }
-.customer-item + .customer-item {
+.client-item + .client-item {
   margin-left: var(--section-item-gap);
 }
-.customer-link {
+.client-link {
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -368,19 +420,17 @@ ul {
   border: 1px solid var(--LIGHT-SLATE);
   border-radius: 4px;
 }
-.customer-icon {
-  width: 106px;
-  height: 60px;
-
+.client-icon {
+  stroke: currentColor;
   fill: currentColor;
 }
-.customer-link:hover,
-.customer-link:focus {
-  border-color: var(--accent-color);
+.client-link:hover,
+.client-link:focus {
+  border-color: var(--OCEAN);
 }
-.customer-link:hover .customer-icon,
-.customer-link:focus .customer-icon {
-  fill: var(--accent-color);
+.client-icon:hover {
+  fill: var(--OCEAN);
+  stroke: var(--OCEAN);
 }
 /* End of MAIN Styles */
 
@@ -427,10 +477,6 @@ ul {
 }
 .filter-item + .filter-item {
   margin-left: var(--section-item-gap);
-}
-
-.filter-app:hover > .project-item.app {
-  display: none;
 }
 
 .project-list {
@@ -532,7 +578,7 @@ ul {
 }
 .footer-socials-link:hover,
 .footer-socials-link:focus {
-  background-color: var(--accent-color);
+  background-color: var(--GREEN);
 }
 .footer-socials-link:hover .footer-socials-icon,
 .footer-socials-link:focus .footer-socials-icon {
