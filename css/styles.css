@@ -353,7 +353,7 @@ span#studio:hover {
   align-items: center;
   width: 40px;
   height: 40px;
-  background-color: var(--IRIS);
+  background-color: var(--WHITE);
   color: var(--CLOUD);
   border-radius: 50%;
 }
